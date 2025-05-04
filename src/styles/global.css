@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@import "swiper/css/bundle";
+
+@theme {
+  --color-primary: #beaf87; /* Dorado principal del logo */
+  --color-bg-1: #0f0f0f; /* Fondo oscuro elegante */
+  --color-bg-2: #1c1c1c; /* Fondo secundario o tarjetas */
+  --color-text: #f5f5f5; /* Texto principal claro */
+  --color-muted: #a3a3a3; /* Texto secundario / descripciones */
+  --color-accent: #383838; /* Bordes, separadores, hover sutiles */
+}
+
+html,
+body {
+  background-color: var(--color-bg-1);
+
+  color: var(--color-text);
+
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: "Inter Variable", sans-serif;
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display Variable", serif;
+  text-shadow: 1px 1px 20px var(--color-primary);
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+p {
+  line-height: 1.4;
+  margin-bottom: 1em;
+  font-weight: 100;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+}
+
+p strong {
+  font-weight: 700;
+  text-shadow: 1px 1px 20px var(--color-primary);
+}
+
+/* Swiper custom */
+/* Navigation */
+swiper-container {
+  --swiper-theme-color: #beaf87;
+  --swiper-navigation-color: #beaf87;
+  --swiper-pagination-color: #beaf87;
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-inactive-color: #ccc;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+}
+
+/* Bullets pagination */
+/* Estilos para los bullets de paginación */
+.swiper-pagination-bullet {
+  background-color: #beaf87;
+  width: 12px;
+  height: 12px;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #beaf87;
+  opacity: 1;
+}
+
+/* Estilos para las flechas de navegación */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #beaf87;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* Effect image */
+@utility mask-fade-left {
+  mask-image: linear-gradient(to left, black 80%, transparent 100%);
+}
+
+/* Srcroll Bar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

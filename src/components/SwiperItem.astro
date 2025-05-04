@@ -1,0 +1,46 @@
+---
+import ButtonLink from "@/components/ButtonLink.astro";
+
+interface Props {
+  type: string;
+  image: string;
+  title: string;
+  href: string;
+}
+
+const { type, image, title, href } = Astro.props;
+---
+
+<!-- Texto lado izquierdo -->
+<section
+  class="flex-1 flex flex-col justify-center items-center text-center md:text-left px-6 md:px-16 gap-6 bg-white/5 backdrop-blur-m"
+>
+  <div class="max-w-lg">
+    <!-- Etiqueta -->
+    <span
+      class="slide-tag uppercase text-sm font-body text-muted flex items-center gap-2"
+    >
+      <div class="w-10 h-1 bg-primary rounded-full"></div>
+      {type}
+    </span>
+    <!-- Title -->
+    <h1 class="slide-title text-4xl md:text-7xl font-heading text-primary">
+      {title}
+    </h1>
+    <!-- Description -->
+    <p class="mt-4 text-lg font-body">
+      <slot />
+    </p>
+    <!-- Link to page -->
+    <ButtonLink className="slide-button" href={href}>Ver más</ButtonLink>
+  </div>
+</section>
+
+<!-- Imagen lado derecho -->
+<section class="flex-1 h-full">
+  <img
+    src={image}
+    alt="Imagen de propiedad en venta"
+    class="w-full h-full object-cover"
+  />
+</section>
