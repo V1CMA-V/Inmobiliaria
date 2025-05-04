@@ -1,26 +1,11 @@
 ---
+import Grid from "@/components/Grid.astro";
 import Layout from "@/layouts/Layout.astro";
-import Hero from "@/sections/Hero.astro";
 ---
 
 <Layout>
-  <Hero />
+  <Grid />
+  <!-- <Header /> -->
+  <!-- <MouseAnimation /> -->
+  <!-- <Hero /> -->
 </Layout>
-
-<script type="module">
-  import { animateSlideContent } from "/src/js/gsap-slide-animations.js";
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const swiperEl = document.querySelector(".mySwiper");
-
-    swiperEl.addEventListener("slidechange", (event) => {
-      const swiper = event.target.swiper;
-      animateSlideContent(swiper.activeIndex);
-    });
-
-    swiperEl.addEventListener("ready", (event) => {
-      const swiper = event.target.swiper;
-      animateSlideContent(swiper.activeIndex);
-    });
-  });
-</script>

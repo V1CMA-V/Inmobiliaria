@@ -1,0 +1,23 @@
+---
+
+---
+
+<div id="cursor"></div>
+
+<style>
+  #cursor {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* para que no bloquee clicks */
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 9999;
+    mix-blend-mode: difference; /* opcional, para mejor visibilidad */
+  }
+</style>
+
+<script type="module" src="/src/js/mouse-animate.js"></script>

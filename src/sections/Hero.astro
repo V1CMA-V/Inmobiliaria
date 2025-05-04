@@ -1,52 +1,46 @@
 ---
+// Hero.astro
 import SwiperItem from "@/components/SwiperItem.astro";
 ---
 
 <swiper-container
   init="false"
   class="mySwiper w-full h-screen"
+  loop="true"
   pagination="true"
   navigation="true"
-  mousewheel="true"
-  autoplay-delay="5000"
-  autoplay-disable-on-interaction="false"
-  loop="true"
   keyboard="true"
   slides-per-view="1"
+  mousewheel="true"
+  onSwiper="onSwiper"
 >
   <!-- Slide 1: Venta -->
-  <swiper-slide class="h-full w-full bg-black flex flex-col md:flex-row">
+  <swiper-slide class="h-full w-full flex flex-col md:flex-row">
     <SwiperItem
-      type="Venta"
-      image="/Hero/venta.webp"
       title="Compra tu hogar"
+      description="Encuentra la propiedad perfecta en la mejor ubicación de la ciudad."
+      image="/Hero/venta.webp"
       href="/venta"
-    >
-      Encuentra la propiedad perfecta en la mejor ubicación de la ciudad.
-    </SwiperItem>
+    />
   </swiper-slide>
 
   <!-- Slide 2: Renta -->
-  <swiper-slide class="h-full w-full bg-black flex flex-col md:flex-row">
+  <swiper-slide class="h-full w-full flex flex-col md:flex-row">
     <SwiperItem
-      type="Renta"
-      image="/Hero/renta.webp"
       title="Alquila tu hogar"
+      description="Descubre opciones flexibles para tu estilo de vida."
+      image="/Hero/renta.webp"
       href="/renta"
-    >
-      Descubre opciones flexibles para tu estilo de vida.
-    </SwiperItem>
+    />
   </swiper-slide>
 
-  <!-- Slide 3: Asesoría / Contacto -->
-  <swiper-slide class="h-full w-full bg-black flex flex-col md:flex-row">
+  <!-- Slide 3: Asesoría -->
+  <swiper-slide class="h-full w-full flex flex-col md:flex-row">
     <SwiperItem
-      type="Contacto"
-      image="/Hero/contacto.webp"
       title="Contáctanos"
+      description="Nuestro equipo está listo para ayudarte a tomar la mejor decisión."
+      image="/Hero/contacto.webp"
       href="/contacto"
-    >
-      Nuestro equipo está listo para ayudarte a tomar la mejor decisión.
-    </SwiperItem>
+    />
   </swiper-slide>
 </swiper-container>
